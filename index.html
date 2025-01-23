@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies.com</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Upcoming Movies 2025</h1>
+
+        <!-- Search Bar -->
+        <div class="search-container">
+            <input 
+                type="text" 
+                id="search-input" 
+                class="search-input" 
+                placeholder="Search for movies..." 
+                oninput="searchMovies()">
+        </div>
+
+        <!-- Sort Dropdown -->
+        <div class="sort-dropdown-container">
+            <label for="sort-dropdown">Sort By:</label>
+            <select id="sort-dropdown" onchange="handleSortChange(event)">
+                <option value="release-asc">Release Date (Oldest)</option>
+                <option value="release-desc">Release Date (Newest)</option>
+                <option value="title-asc">Title (A-Z)</option>
+                <option value="title-desc">Title (Z-A)</option>
+            </select>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="filter-buttons">
+            <button class="filter-btn" onclick="filterMovies('Animation')">Animation</button>
+            <button class="filter-btn" onclick="filterMovies('Thriller')">Thriller</button>
+            <button class="filter-btn" onclick="filterMovies('Action')">Action</button>
+            <button class="filter-btn" onclick="filterMovies('Horror')">Horror</button>
+            <button class="filter-btn" onclick="filterMovies('Drama')">Drama</button>
+            <button class="filter-btn" onclick="filterMovies('Sci-Fi')">Sci-Fi</button>
+            <button class="filter-btn" onclick="showAllMovies()">Show All</button>
+        </div>
+    </header>
+
+    <section id="movie-list" class="movie-list">
+        <!-- Movies will be injected here by JavaScript -->
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 MyApp. All Rights Reserved.</p>
+            <div class="social-links">
+                <a href="#" class="social-icon">Facebook</a>
+                <a href="#" class="social-icon">Twitter</a>
+                <a href="#" class="social-icon">Instagram</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
